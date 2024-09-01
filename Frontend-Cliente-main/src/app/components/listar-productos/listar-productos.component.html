@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+          <!-- Contenedor principal -->
+          <div class="card">
+              <div class="card-body text-center">
+                  <!-- Título del listado -->
+                  <span class="titulo">LISTADO DE PRODUCTOS</span>
+                  <!-- Botón para agregar un nuevo producto -->
+                  <button class="btn btn-success float-end" routerLink="./crear-producto">NUEVO</button>
+                  <!-- Tabla para mostrar el listado de productos -->
+                  <table *ngIf="listProducto.length > 0" class="table table-striped mt-3">
+                      <thead>
+                          <tr>
+                              <th scope="col">Producto</th>
+                              <th scope="col">Categoria</th>
+                              <th scope="col">Ubicacion</th>
+                              <th scope="col">Precio</th>
+                              <th scope="col"></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <!-- Iteración sobre la lista de productos -->
+                          <tr *ngFor="let producto of listProducto">
+                              <!-- Celdas con los detalles de cada producto -->
+                              <td>{{ producto.nombre }}</td> <!-- Nombre del producto -->
+                              <td>{{ producto.categoria }}</td> <!-- Categoría del producto -->
+                              <td>{{ producto.ubicacion }}</td> <!-- Ubicación del producto -->
+                              <td>{{ producto.precio | currency:'USD' }}</td> <!-- Precio del producto -->
+                              <td>
+                                  <!-- Icono para editar el producto -->
+                                  <i [routerLink]="['/editar-producto', producto._id]" class="fas fa-edit text-primary"></i>
+                                  <!-- Icono para eliminar el producto -->
+                                  <i (click)="eliminarProducto(producto._id)" class="fas fa-trash text-danger"></i>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <!-- Mensaje si no hay productos para mostrar -->
+                  <h5 style="text-align: start; margin-top: 10px;" *ngIf="listProducto.length == 0">No hay productos para mostrar</h5>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

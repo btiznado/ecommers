@@ -1,0 +1,62 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <!-- Título del formulario, se convierte a mayúsculas -->
+                    <span class="titulo"> {{ titulo | uppercase }}</span>
+                    <!-- Formulario con Angular -->
+                    <form class="mt-3" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+                        <!-- Campo de Producto -->
+                        <div class="mb-3">
+                            <input type="text" formControlName="producto" class="form-control form-control-lg"
+                                placeholder="Producto">
+                            <!-- Mensaje de error si el campo Producto está vacío -->
+                            <div class="text-danger"
+                                *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched">
+                                <span>El nombre del producto <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <!-- Campo de Categoría -->
+                        <div class="mb-3">
+                            <input type="text" formControlName="categoria" class="form-control form-control-lg"
+                                placeholder="Categoria">
+                            <!-- Mensaje de error si el campo Categoría está vacío -->
+                            <div class="text-danger"
+                                *ngIf="productoForm.get('categoria')?.hasError('required') && productoForm.get('categoria')?.touched">
+                                <span>La categoria <strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <!-- Campo de Ubicación -->
+                        <div class="mb-3">
+                            <input type="text" formControlName="ubicacion" class="form-control form-control-lg"
+                                placeholder="Ubicacion">
+                            <!-- Mensaje de error si el campo Ubicación está vacío -->
+                            <div class="text-danger"
+                                *ngIf="productoForm.get('ubicacion')?.hasError('required') && productoForm.get('ubicacion')?.touched">
+                                <span>La ubicacion <strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <!-- Campo de Precio -->
+                        <div class="mb-3">
+                            <input type="number" formControlName="precio" class="form-control form-control-lg"
+                                placeholder="Precio">
+                            <!-- Mensaje de error si el campo Precio está vacío -->
+                            <div class="text-danger"
+                                *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched">
+                                <span>El precio <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <!-- Botones -->
+                        <div class="mb-3">
+                            <!-- Botón para volver atrás -->
+                            <button routerLink="/" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                            <!-- Botón para enviar el formulario -->
+                            <button type="submit" [disabled]="productoForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

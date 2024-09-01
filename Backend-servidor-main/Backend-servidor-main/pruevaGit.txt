@@ -1,0 +1,90 @@
+ 
+Isis web 1.0
+
+1) Instalar NODE JS, version LTS ( desde la pagina de node)
+
+2) Abrir adminstrador de archivos selecionar el disco local, hacer click y escrivir CMD y enter se abrira la terminal 
+       
+                        
+
+instalar Agnular-Cli  
+npm install -g @angular/cli
+
+3) Realizar procedimento de abilitar los scripts, consta de dos partes
+
+A)Abrir Power shell con permisos de admintrador
+Comandos 
+Get-ExecutionPolicy -list  ( van a ver el estado, luego ejecuten el siguiente comando )
+Set-ExecutionPolicy RemoteSigned -Force
+esta listo el primer paso.
+
+B) el sugundo paso lo realizamos precionando 
+Windows + r   luego escribimos
+gpedit.msc  nos movemos por las carpetas
+configuracion del equipo
+  plantillas administrativas
+    componentes de windows
+      windows power shell (y entramos)
+doble click en activar la ejecucion de scripts 
+selecionar el check box: Habilitada
+cliquear abajo de directiva de ejecucion y selecionar
+Permitir todos los scripts  (yo puse ese como para no tener problema si quieren pongan, solo firmados)
+Aplicar y despues Aceptar 
+     
+5) Crear carpeta "Isis Web 1.0" 
+entrar en la carpeta y clonar los repositorios abriendo una terminal de GIT BASH (boton derecho mause click, Git Bash Here)
+inicializamos Git
+Git init
+copiar uno por vez e implantarlos.
+
+git clone https://github.com/Hernanjas400/Backend-servidor.git
+git clone https://github.com/Hernanjas400/Frontend-Cliente.git
+
+5) Abrir la carpeta  "Isis Web 1.0"  desde visual estudio code,
+abrir una teminal integrada y moverse del directorio raiz con el comando
+ cd Backend-servidor 
+ Instalar "npm"
+npm install  (espear que se instalen los paquetes)
+Ya esta para ejecutar escriban:
+npm run dev y enter 
+
+Estando todo bien saldra un mesaje en terminal,
+
+El servidor esta corriendo perfectamente
+BD Conectada
+
+desde la terminal
+el proyecto se para con Ctrl+c   (no lo cierren ahora, no andaria la base de datos)
+
+(no cerrar la terminal y abrir otra para el front, la cual se abrira en el directorio raiz y nos movemos con)
+cd Frontend-Cliente
+ Instalar "npm"
+npm install  (espear que se instalen los paquetes)
+
+Ya esta para ejecutar escriban:
+ng serve --o y enter
+El proyecto se ejecutara abriendo el navegador en en el localhost:4200
+
+desde la terminal
+el proyecto se para con Ctrl+c
+
+IMPORTANTE: CUANDO COMIENSEN A TRABAJAR INICIALICEN GIT EN LAS TERMINALES DE VISUSUAL  QUE CREARON,  
+CARPETAS (BACK Y FRONT) CON "git init" y comenzara a segirlos , "CREN SUS PROPIAS RAMAS EN GIT y" RECUERDEN
+ QUE LA RAMA MAIN NO SE MODIFICA LES PASO UN VIDEO DE REFERENCIA DESPUES DE CREAR SU RAMA CON LA FUNCIONALIDAD 
+ A DESARROLLAR NO OLVIDEN DE CAMBIARLA EN VISUAL ESTUDIO EN LA PARTE DE ABAJO.
+https://www.youtube.com/watch?v=sH9g77J92ns&ab_channel=CodeWar
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
