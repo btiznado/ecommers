@@ -37,8 +37,8 @@ inicializamos Git
 Git init
 copiar uno por vez e implantarlos.
 
-git clone https://github.com/Hernanjas400/Backend-servidor.git
-git clone https://github.com/Hernanjas400/Frontend-Cliente.git
+git clone https://github.com/btiznado/ecommers/tree/cc5067694be34495b0471cc23d3ed24f43450154/Backend-servidor-main/Backend-servidor-main
+git clone https://github.com/btiznado/ecommers/tree/cc5067694be34495b0471cc23d3ed24f43450154/Frontend-Cliente-main
 
 5) Abrir la carpeta  "Isis Web 1.0"  desde visual estudio code,
 abrir una teminal integrada y moverse del directorio raiz con el comando
